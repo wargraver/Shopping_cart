@@ -1,0 +1,18 @@
+const express=require('express')
+let path=require('path')
+let app=express()
+const router= new require('express').Router()
+const route1=require('./db/user.js')
+const route2=require('./db/product.js')
+//console.log(__dirname)
+app.use(express.static(path.join(__dirname,'../public')))
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(route1)
+app.use(route2)
+app.use('/',(req,res)=>{
+    res.status(200).send("hello there")
+})
+app.listen(3000,()=>{
+    console.log("server is up on port 3000")
+})
