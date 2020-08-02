@@ -1,5 +1,5 @@
 const Sequelize=require('sequelize')
-const seq = new Sequelize('cart_e','root','Bijnor@123',{
+const seq = new Sequelize('cart_e','root','.............',{
     dialect:'mysql',
     host:'localhost'
 })
